@@ -8,6 +8,8 @@ public class EqualsTest {
 		
 		System.out.println(a == b);
 		System.out.println(a.equals(b));
+		
+		// 测试提交git
 
 	}
 

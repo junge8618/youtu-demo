@@ -10,7 +10,7 @@ public class EqualsTest {
 		System.out.println(a.equals(b));
 		
 		// 测试提交git
-
+		// 在分支上提交测试
 	}
 
 }

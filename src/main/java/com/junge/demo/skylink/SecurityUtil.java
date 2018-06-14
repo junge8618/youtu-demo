@@ -3,6 +3,9 @@
  */
 package com.junge.demo.skylink;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -117,11 +120,15 @@ public class SecurityUtil {
 	
 	/**
 	 * 加密处理
+	 * 1.生成JSON格式的返回结果；
+	 * 2.对结果按BASE64方式编码；
+	 * 3.按指定的字符对照表将编码后的字符串进行加密。
+	 * 4.对加密后的字符进行urlencode操作
 	 * 
 	 * @param inputStr
 	 * @return
 	 */
-	public static final String encrypt(String inputStr) {
+	public static final String encrypt(String inputStr) throws UnsupportedEncodingException {
 		if (null == inputStr) {
 			return inputStr;
 		}
@@ -135,22 +142,25 @@ public class SecurityUtil {
 			outputStr.append(getEncryptChar(base64Str.charAt(i)));
 		}
 		
-		return outputStr.toString();
+		return URLEncoder.encode(outputStr.toString(), "UTF-8");
 	}
 	
 	/**
 	 * 解密处理
 	 * @param inputStr
 	 * @return
+	 * @throws UnsupportedEncodingException 
 	 */
-	public static final String decrypt(String inputStr) {
+	public static final String decrypt(String inputStr) throws UnsupportedEncodingException {
 		if (null == inputStr) {
 			return inputStr;
 		}
 		
+		String decodeStr = URLDecoder.decode(inputStr, "UTF-8");
+		
 		StringBuilder outputStr = new StringBuilder();
-		for (int i=0; i<inputStr.length(); i++) {
-			outputStr.append(getdecryptChar(inputStr.charAt(i)));
+		for (int i=0; i<decodeStr.length(); i++) {
+			outputStr.append(getdecryptChar(decodeStr.charAt(i)));
 		}
 		
 		return new String(Base64.decodeBase64(outputStr.toString()));
@@ -158,8 +168,9 @@ public class SecurityUtil {
 
 	/**
 	 * @param args
+	 * @throws UnsupportedEncodingException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedEncodingException {
 		
 		JSONObject json = new JSONObject();
 		json.put("eid", 11000018);

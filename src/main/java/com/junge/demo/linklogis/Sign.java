@@ -1,5 +1,7 @@
 package com.junge.demo.linklogis;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -96,6 +98,12 @@ public class Sign {
 		values.put("tmp", null);
 		
 		System.out.println(appSign(values, "rGfuztc9VgnjdPzNdqsjOwJUUIJCxWt4"));
+		
+		try {
+			System.out.println(URLEncoder.encode("rGfuztc9VgnjdPzNdqsjOwJUUIJCxWt4", "UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

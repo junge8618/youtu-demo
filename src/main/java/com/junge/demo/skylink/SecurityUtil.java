@@ -127,6 +127,7 @@ public class SecurityUtil {
 	 * 
 	 * @param inputStr
 	 * @return
+	 * @throws UnsupportedEncodingException 
 	 */
 	public static final String encrypt(String inputStr) throws UnsupportedEncodingException {
 		if (null == inputStr) {

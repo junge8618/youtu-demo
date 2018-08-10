@@ -41,7 +41,7 @@ public class MessageDigestUtil {
 	 * @param inputStr
 	 * @return
 	 */
-	public static final String encodeMd5ApacheCodec(String inputStr) throws NoSuchAlgorithmException {
+	public static final String encodeMd5ApacheCodec(String inputStr) {
 		return DigestUtils.md5Hex(inputStr);
 	}
 
@@ -84,7 +84,7 @@ public class MessageDigestUtil {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		String str = "这是一段很长的话。This is a long story.";
+		String str = "veuwbbebwariikhwrjbz";
 		System.out.println(encodeMd5(str));
 		System.out.println(encodeMd5ApacheCodec(str));
 		System.out.println(encodeSHA(str));

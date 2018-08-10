@@ -41,6 +41,13 @@
 			<version>1.11</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
@@ -52,5 +59,13 @@
 			<artifactId>bcprov-jdk15on</artifactId>
 			<version>1.56</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.jrobin/jrobin -->
+<dependency>
+    <groupId>org.jrobin</groupId>
+    <artifactId>jrobin</artifactId>
+    <version>1.5.9</version>
+</dependency>
+
 	</dependencies>
 </project>

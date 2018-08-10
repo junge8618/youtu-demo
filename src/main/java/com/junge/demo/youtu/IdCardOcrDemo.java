@@ -26,16 +26,14 @@ public class IdCardOcrDemo {
 			// faceYoutu.BizLicenseOcrUrl("http://open.youtu.qq.com/app/img/experience/char_general/ocr_yyzz_01.jpg");
 			// response =
 			// faceYoutu.CreditCardOcrUrl("http://open.youtu.qq.com/app/img/experience/char_general/ocr_card_1.jpg");
-			response = faceYoutu.IdCardOcrImgStr(com.junge.demo.youtu.ImgFileUtil2.getImageStr("E://idcard_0.jpg"), 0);
-			System.out.println(response);
+			/*response = faceYoutu.IdCardOcrImgStr(com.junge.demo.youtu.ImgFileUtil2.getImageStr("E://idcard_0.jpg"), 0);
+			System.out.println(response);*/
 			
-			response = faceYoutu.IdCardOcrImgStr(com.junge.demo.youtu.ImgFileUtil2.getImageStr("E://idcard_1.jpg"), 1);
-			System.out.println(response);
+//			response = faceYoutu.IdCardOcrImgStr(com.junge.demo.youtu.ImgFileUtil2.getImageStr("E://idcard_1.jpg"), 1);
+//			System.out.println(response);
 
-			/*
-			 * response = faceYoutu.BizLicenseOcr("E://三证合一营业执照.jpg"); // get
-			 * respose System.out.println(response);
-			 */
+			response = faceYoutu.BizLicenseOcr("E://三证合一营业执照.jpg"); // get
+			System.out.println(response);
 
 		} catch (Exception e) {
 			e.printStackTrace();

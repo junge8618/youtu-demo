@@ -22,11 +22,11 @@ public class FileParseTest3 {
 	public static void main(String[] args) {
 		try {
 
-			List<String> lines = FileUtils.readLines(new File("D:\\zdbpssvender-server.log"), "UTF-8");
+			List<String> lines = FileUtils.readLines(new File("D:\\log\\2018-08-11\\zdbpssvender-server-2018-08-11-1.log"), "UTF-8");
 			for (String line : lines) {
 				int handleTime = getHandleTime(line);
-				if (handleTime > 5000) {
-					FileUtils.writeLines(new File("D:\\zdbpssvender-server_5000.log"), Arrays.asList(line + "\n"), "UTF-8", true);
+				if (handleTime > 2000) {
+					FileUtils.writeLines(new File("D:\\log\\2018-08-11\\result_2000.log"), Arrays.asList(line + "\n"), "UTF-8", true);
 				}
 			}
 

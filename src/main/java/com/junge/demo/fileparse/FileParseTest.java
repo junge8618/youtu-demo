@@ -39,7 +39,7 @@ public class FileParseTest {
 			}
 			
 			for (String accessToken : result.keySet()) {
-				if (result.get(accessToken).size() > 5) {
+				if (result.get(accessToken).size() == 2) {
 					FileUtils.writeLines(new File("D:\\access_result.log"), Arrays.asList("\n"+accessToken + ":####################\n"), "UTF-8", true);
 					FileUtils.writeLines(new File("D:\\access_result.log"), result.get(accessToken), "UTF-8", true);
 				}

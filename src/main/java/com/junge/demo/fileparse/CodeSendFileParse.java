@@ -34,7 +34,7 @@ public class CodeSendFileParse {
 		try {
 
 			Map<String, Integer> result = new HashMap<String, Integer>();
-			List<String> lines = FileUtils.readLines(new File("D:\\smslog.txt"), "UTF-8");
+			List<String> lines = FileUtils.readLines(new File("D:\\smslog1.txt"), "UTF-8");
 			System.out.println("lines size:" + lines.size());
 			for (String line : lines) {
 				String ip = getSendIP(line);
@@ -56,7 +56,7 @@ public class CodeSendFileParse {
 				count += result.get(key);
 			}
 			
-			FileUtils.writeLines(new File("D:\\smslog_result.txt"), Arrays.asList(result.toString()), "UTF-8", false);
+			FileUtils.writeLines(new File("D:\\smslog1_result.txt"), Arrays.asList(result.toString()), "UTF-8", false);
 			
 			System.out.println("count:" + count);
 
@@ -67,6 +67,9 @@ public class CodeSendFileParse {
 	}
 	
 	public static String getSendIP(String line) {
+		if (!line.contains("/zdbepinit-server/eqinit/code/send")) {
+			return null;
+		}
 		String regEx="((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)"; 
 		Pattern p = Pattern.compile(regEx); 
 		Matcher m = p.matcher(line); 

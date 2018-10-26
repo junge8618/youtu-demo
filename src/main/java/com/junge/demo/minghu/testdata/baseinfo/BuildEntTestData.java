@@ -5,7 +5,9 @@ package com.junge.demo.minghu.testdata.baseinfo;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
@@ -18,17 +20,19 @@ import com.junge.demo.minghu.model.baseinfo.EntInfo;
  *
  */
 public class BuildEntTestData {
+	
+	public static final String fileName = "D:\\minghu\\entinfo.txt";
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		int count = 1000;
+		int count = 10;
 		long mobileno = 13810010000L;
 		int ententity = 2000;
 		
-		File outputFile = new File("D:\\minghu\\entinfo.txt");
+		File outputFile = new File(fileName);
 		
 		for (int i=1; i<=count; i++) {
 			EntInfo ent = new EntInfo();
@@ -54,6 +58,23 @@ public class BuildEntTestData {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static List<String> buildEntList() {
+		List<String> result = new ArrayList<String>();
+		
+		try {
+			File entFile = new File(fileName);
+			List<String> entJsons = FileUtils.readLines(entFile, "UTF-8");
+			for(String entStr : entJsons) {
+				result.add(JSONObject.parseObject(entStr, EntInfo.class).getEntentity());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
 	}
 
 }

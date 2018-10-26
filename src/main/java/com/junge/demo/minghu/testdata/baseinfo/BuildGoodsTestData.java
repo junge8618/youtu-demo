@@ -5,7 +5,6 @@ package com.junge.demo.minghu.testdata.baseinfo;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,19 +19,21 @@ import com.junge.demo.minghu.model.baseinfo.GoodsInfo;
  *
  */
 public class BuildGoodsTestData {
-
+	
+	public static final String fileName = "D:\\minghu\\goodsinfo.txt";
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		int count = 1000;
+		int count = 500;
 		long barcode = 9588878200000L;
 		int goodsentity = 10000;
 		
-		List<String> entlist = buildEntList();
+		List<String> ententitylist = BuildEntTestData.buildEntList();
 		
-		File outputFile = new File("D:\\minghu\\goodsinfo.txt");
+		File outputFile = new File(fileName);
 		
 		for (int i=1; i<=count; i++) {
 			GoodsInfo goods = new GoodsInfo();
@@ -46,7 +47,7 @@ public class BuildGoodsTestData {
 			goods.setPackunitqty(24.0);
 			goods.setBulkprice(3.0);
 			goods.setPackprice(72.00);
-			goods.setEntlist(entlist);
+			goods.setEntlist(ententitylist);
 			
 			try {
 				FileUtils.writeLines(outputFile, Arrays.asList(JSONObject.toJSONString(goods)), "\n", true);
@@ -58,17 +59,5 @@ public class BuildGoodsTestData {
 		System.out.println("fin");
 	}
 
-	private static List<String> buildEntList() {
-		
-		int count = 1000;
-		int ententity = 2000;
-		
-		List<String> result = new ArrayList<String>();
-		for (int i=1; i<=count; i++) {
-			result.add(String.valueOf(ententity++));
-		}
-		
-		return result;
-	}
 
 }

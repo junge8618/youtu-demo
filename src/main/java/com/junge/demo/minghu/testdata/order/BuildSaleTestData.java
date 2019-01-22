@@ -93,10 +93,10 @@ public class BuildSaleTestData {
 			saleInfo.setContacttele("0755-32165487");
 			saleInfo.setContactmobile("13801380138");
 			saleInfo.setDiscvalue(0.0);
-			saleInfo.setDeliverydate("2018-10-31 00:00:00");
+			saleInfo.setDeliverydate("2018-11-07 12:30:00");
 			saleInfo.setSaler("业务员");
 			saleInfo.setSendtype(0);
-			saleInfo.setCreatetime("2018-10-24 11:26:00");
+			saleInfo.setCreatetime("2018-11-06 11:26:00");
 			
 			SaleExtObj extobj = new SaleExtObj();
 			extobj.setOrderid_(orderid_);
@@ -124,6 +124,7 @@ public class BuildSaleTestData {
 				
 				SaleItemExtObj itemExtobj = new SaleItemExtObj();
 				itemExtobj.setReqgroup_("百草园组");
+				itemExtobj.setGoodsentity("0123");
 				item.setExtobj(itemExtobj);
 				
 				items.add(item);
@@ -140,13 +141,13 @@ public class BuildSaleTestData {
 	 */
 	public static void main(String[] args) {
 		
-		int count = 10000;
+		int count = 1000;
 		
 		RandomData randomData = new RandomDataImpl();
 		
 		File outputFile = new File("D:\\minghu\\saleorders.txt");
 		
-		Long orderid_ = 9999000000L;
+		Long orderid_ = 9999010000L;
 		
 		for (int i=1; i<=count; i++) {
 			int custidx = randomData.nextInt(0, custList.size() - 1);

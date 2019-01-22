@@ -120,7 +120,7 @@ public class BuildClertSaleTestData {
 	 */
 	public static void main(String[] args) {
 		
-		int count = 10000;
+		int count = 1000;
 		
 		RandomData randomData = new RandomDataImpl();
 		

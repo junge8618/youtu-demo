@@ -3,12 +3,12 @@
  */
 package com.junge.demo.fileparse;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
-import org.apache.commons.io.FileUtils;
 
 /**
  * @author liuxj
@@ -22,7 +22,7 @@ public class FileParseTest3 {
 	public static void main(String[] args) {
 		try {
 
-			List<String> lines = FileUtils.readLines(new File("D:\\log\\2018-08-11\\zdbpssvender-server-2018-08-11-1.log"), "UTF-8");
+			List<String> lines = FileUtils.readLines(new File("D:\\log\\2018-08-11\\zdbpss-pursale-server-2018-12-03-1.log"), "UTF-8");
 			for (String line : lines) {
 				int handleTime = getHandleTime(line);
 				if (handleTime > 2000) {

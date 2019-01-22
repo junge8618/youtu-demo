@@ -114,7 +114,7 @@ public class BuildClertPdTestData {
 	 */
 	public static void main(String[] args) {
 		
-		int count = 10;
+		int count = 1000;
 		
 		RandomData randomData = new RandomDataImpl();
 		

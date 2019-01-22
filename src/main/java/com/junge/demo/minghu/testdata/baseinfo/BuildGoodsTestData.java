@@ -47,6 +47,9 @@ public class BuildGoodsTestData {
 			goods.setPackunitqty(24.0);
 			goods.setBulkprice(3.0);
 			goods.setPackprice(72.00);
+			goods.setStype("型号");
+			goods.setRepairday(30);
+			goods.setSafeday(120);
 			goods.setEntlist(ententitylist);
 			
 			try {
